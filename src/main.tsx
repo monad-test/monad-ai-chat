@@ -12,7 +12,7 @@ import {
   http,
   WagmiProvider,
 } from "wagmi";
-import { sepolia } from "wagmi/chains";
+import { sepolia,monadTestnet } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "@rainbow-me/rainbowkit/styles.css";
 
@@ -24,10 +24,10 @@ const { connectors } = getDefaultWallets({
 
 // --- Setup wagmi config ---
 const config = createConfig({
-  chains: [sepolia],
+  chains: [monadTestnet],
   connectors,
   transports: {
-    [sepolia.id]: http(), // use Monad RPC here later
+    [monadTestnet.id]: http(), // use Monad RPC here later
   },
 });
 
