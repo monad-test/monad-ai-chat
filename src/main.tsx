@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import { Toaster } from "react-hot-toast";
+import "./index.css";
 import {
   getDefaultWallets,
   RainbowKitProvider,
@@ -38,6 +40,17 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider>
           <App />
+          <Toaster position="top-right" toastOptions={{
+            style: {
+              background: 'linear-gradient(135deg, #000 0%, #06b6d4 100%)',
+              color: '#fff',
+              border: '1px solid #06b6d4',
+            },
+            iconTheme: {
+              primary: '#06b6d4',
+              secondary: '#000',
+            },
+          }} />
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
